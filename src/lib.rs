@@ -6,26 +6,21 @@ use deepsize::DeepSizeOf;
 use game::GameState;
 use mcts::{MCTSArena, MCTSNode, NodeId};
 
-use wasm_bindgen::prelude::wasm_bindgen;
-
 mod game;
 mod mcts;
 
-#[wasm_bindgen]
 pub struct Engine {
     arena: mcts::MCTSArena,
     current_node: NodeId,
 }
 
 #[derive(Debug)]
-#[wasm_bindgen]
 pub struct Evaluation {
     pub confidence: f32,
     pub best_move: NodeId,
 }
 
 #[derive(Debug)]
-#[wasm_bindgen]
 pub enum Error {
     IllegalMove,
 }
@@ -40,7 +35,6 @@ impl Display for Error {
 
 impl std::error::Error for Error {}
 
-#[wasm_bindgen]
 impl Engine {
     pub fn init() -> Self {
         let arena = MCTSArena::init();

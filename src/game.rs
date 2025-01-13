@@ -1,7 +1,5 @@
 use std::simd::{cmp::SimdPartialEq, u16x8};
 
-use wasm_bindgen::prelude::*;
-
 #[derive(Clone, Copy, Debug, PartialEq, Eq, deepsize::DeepSizeOf)]
 pub enum Player {
     X,

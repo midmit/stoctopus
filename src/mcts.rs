@@ -3,14 +3,12 @@ use crate::game::{Board, GameState, Player};
 use deepsize::DeepSizeOf;
 use rand::Rng;
 use rayon::prelude::*;
-use wasm_bindgen::prelude::wasm_bindgen;
 
 #[derive(DeepSizeOf, Debug)]
 pub(crate) struct MCTSArena {
     nodes: Vec<MCTSNode>,
 }
 
-#[wasm_bindgen]
 #[derive(Copy, Clone, Debug, DeepSizeOf)]
 pub struct NodeId(usize);
 
